@@ -1,8 +1,8 @@
 function hourglassSum(arr) {
-  let sum = 0;
-  for (let i = 1; i < 5; i++) {
-    for (let j = 1; j < 5; j++) {
-      let Mij =
+  let sum = Number.NEGATIVE_INFINITY;
+  for (let i = 1; i < arr.length - 1; i++) {
+    for (let j = 1; j < arr.length - 1; j++) {
+      let hourglassSum =
         arr[i - 1][j - 1] +
         arr[i - 1][j - 0] +
         arr[i - 1][j + 1] +
@@ -10,8 +10,8 @@ function hourglassSum(arr) {
         arr[i + 1][j - 1] +
         arr[i + 1][j + 0] +
         arr[i + 1][j + 1];
-      if (Mij > sum) {
-        sum = Mij;
+      if (hourglassSum > sum) {
+        sum = hourglassSum;
       }
     }
   }
